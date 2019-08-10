@@ -13,8 +13,15 @@
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
+\usepackage{booktabs}
 \usepackage{fixltx2e} % provides \textsubscript
 % use upquote if available, for straight quotes in verbatim environments
+
+% --- page break after each H1 title
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+% ---
+
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[utf8]{inputenc}
@@ -28,13 +35,21 @@ $endif$
   \setmainfont{EB Garamond} 	% 設定英文字型
   \setromanfont{EB Garamond} 	% 字型
   \setmonofont{Source Code Pro}
+
   % --- unicode character fall back font ---
   \usepackage{newunicodechar} % 定義unicode符號用
   \newfontfamily{\fallbackfont}{Source Han Sans}[Scale=MatchLowercase] % 定義fall back font
   \DeclareTextFontCommand{\textfallback}{\fallbackfont} % 定義fall back font
   \newunicodechar{♂}{\textfallback{♂}}
   \newunicodechar{♀}{\textfallback{♀}}
+  \newunicodechar{∵}{\textfallback{∵}}
+  \newunicodechar{∴}{\textfallback{∴}}
+  \newunicodechar{↑}{\textfallback{↑}}
+  \newunicodechar{↓}{\textfallback{↓}}
+  \newunicodechar{←}{\textfallback{←}}
+  \newunicodechar{→}{\textfallback{→}}
   % ---
+
   \linespread{1.2}\selectfont 	% 行距
   \XeTeXlinebreaklocale "zh" 	% 針對中文自動換行
   \XeTeXlinebreakskip = 0pt plus 1pt % 字與字之間加入0pt至1pt的間距，確保左右對整齊
